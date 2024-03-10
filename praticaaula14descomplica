@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Página Web</title>
+    <!-- Link para o Bootstrap via CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    
+   <!-- Cabeçalho -->
+<header class="bg-dark text-white p-4">
+    <div class="container">
+        <h1>Atividade Prática 10</h1>
+        <nav>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#">Sobre</a></li>
+                <li class="list-inline-item"><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Seção de Destaque -->
+<section class="bg-primary text-white text-center py-5">
+    <div class="container">
+        <h2>Seja Bem-Vindo!</h2>
+        <p>Pesquisa de causa para criação de projetos</p>
+        <a href="#contato" class="btn btn-light btn-lg">Entre em Contato</a>
+    </div>
+</section>
+
+<!-- Corpo da página -->
+<div class="container mt-4">
+    <section>
+        <h2>O que é Causa?</h2>
+        <p>A palavra “causa” é amplamente utilizada em diversos contextos e pode ter diferentes significados, dependendo do contexto em que é empregada. No âmbito jurídico, por exemplo, a causa é o motivo ou fundamento que leva uma pessoa a ingressar com uma ação judicial. Já no campo filosófico, a causa é entendida como o princípio ou origem de algo. Neste artigo, iremos explorar o significado e a importância da causa em diferentes áreas, bem como sua aplicação prática.</p>
+    </section>
+    <section>
+        <h2>Significado de Causa</h2>
+        <p>O termo “causa” tem sua origem no latim “causa”, que significa motivo, razão ou fundamento. Em seu sentido mais amplo, a causa é entendida como a origem ou motivo que leva a um determinado efeito. Ela está presente em diversas áreas do conhecimento humano, como a filosofia, a ciência, o direito, a psicologia, entre outras.</p>
+    </section>
+    <section>
+<h2>Tipos comum de Causas</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Proposta</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Causa</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Projeto 1</th>
+            <td>Filosófica</td>
+            <td>Na filosofia, a causa é um conceito fundamental para a compreensão da realidade. Aristóteles, um dos principais filósofos da Antiguidade, desenvolveu uma teoria das quatro causas, que busca explicar a origem e a natureza dos seres e das coisas.</td>
+        </tr>
+        <tr>
+            <th scope="row">Projeto 2</th>
+            <td>Cientifica</td>
+            <td>A causa também desempenha um papel fundamental no campo científico. Através da observação e da experimentação, os cientistas buscam identificar as causas que levam a determinados fenômenos ou resultados.</td>
+        </tr>
+    </tbody>
+</table>
+</section>
+        <section id="contato">
+            <h2>Contato</h2>
+            <form>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Seu Nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Seu E-mail">
+                </div>
+                <div class="form-group">
+                    <label for="escolha">Projeto:</label>
+                    <textarea class="form-control" id="mensagem" rows="4" placeholder="Qual Projeto tem mais Afinidade"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>© 2024 Desenvolvido por Gustavo para Prática 10/14</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
