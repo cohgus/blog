@@ -1,1 +1,1 @@
-Construção de página para exercicios do curso na Descomplica 24.1
+Esse projeto teve inicio no desenvolvimento das atividades do curso de Front End da Universidade Descomplica.
