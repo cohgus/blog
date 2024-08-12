@@ -186,6 +186,11 @@ section p {
   color: #666;
 }
 
+h2 {
+  font-size: 5vw;
+  max-font-size: 36px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
