@@ -218,8 +218,9 @@
     })
     .then(response => response.json())
     .then(data => {
-      // Exibe mensagem de agradecimento
-      document.getElementById('mensagem-agradecimento').style.display = 'block';
+      // Abre uma nova janela com a mensagem de agradecimento
+      var win = window.open('', '_blank', 'width=500,height=300');
+      win.document.write('<h1>Obrigado pelo contato!</h1><p>Já Recebemos sua solicitação. Nossa equipe entrará em contato em breve.</p>');
     })
     .catch(error => console.error('Erro ao enviar formulário:', error));
 
