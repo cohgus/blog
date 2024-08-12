@@ -15,6 +15,36 @@ header h1 {
   margin: 0;
 }
 
+/* Página 1 - Turquesa */
+#pagina-1 {
+  background-color: #1ABC9C; /* Turquesa */
+  color: #fff; /* Texto branco */
+}
+
+#pagina-1 h1 {
+  color: #fff; /* Título branco */
+}
+
+/* Página 2 - Verde Claro */
+#pagina-2 {
+  background-color: #C6F7D0; /* Verde Claro */
+  color: #333; /* Texto preto */
+}
+
+#pagina-2 h1 {
+  color: #333; /* Título preto */
+}
+
+/* Página 3 - Rosa */
+#pagina-3 {
+  background-color: #FFC5C5; /* Rosa */
+  color: #fff; /* Texto branco */
+}
+
+#pagina-3 h1 {
+  color: #fff; /* Título branco */
+}
+
 nav ul {
   list-style-type: none;
   padding: 0;
