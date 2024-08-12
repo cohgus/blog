@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" "pt">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -185,7 +185,7 @@
 <div class="container">
   <section id="contato" class="bg-light p-4">
     <h2 class="mb-3">Contato</h2>
-    <form action="https://formspree.io/f/mzzpgjwq" method="POST" enctype="multipart/form-data">
+    <form action="https://formspree.io/f/mzzpgjwq" method="POST" enctype="multipart/form-data" onsubmit="return submitForm();">
       <div class="form-group mb-3">
         <label for="nome" class="sr-only">Nome:</label>
         <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu Nome*" required>
@@ -204,8 +204,29 @@
       </div>
       <button type="submit" class="btn btn-primary">Entrar em Contato</button>
     </form>
+    <div id="mensagem-agradecimento" style="display: none;">Obrigado pelo contato! Nossa equipe entrará em contato em breve.</div>
   </section>
 </div>
+
+<script>
+  function submitForm() {
+    // Envia o formulário via AJAX para evitar redirecionamento
+    var formData = new FormData(document.querySelector('form'));
+    fetch('https://formspree.io/f/mzzpgjwq', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Exibe mensagem de agradecimento
+      document.getElementById('mensagem-agradecimento').style.display = 'block';
+    })
+    .catch(error => console.error('Erro ao enviar formulário:', error));
+
+    // Retorna false para evitar redirecionamento
+    return false;
+  }
+</script>
     
 <footer style="background-color: #6c5ce7; /* Cor de fundo roxo turqueza */">
   <div class="container py-4">
