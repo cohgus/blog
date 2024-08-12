@@ -185,7 +185,7 @@
 <div class="container">
   <section id="contato" class="bg-light p-4">
     <h2 class="mb-3">Contato</h2>
-    <form action="https://formspree.io/f/mzzpgjwq" method="POST" enctype="multipart/form-data" onsubmit="return submitForm();">
+    <form action="https://formspree.io/f/mzzpgjwq" method="POST" enctype="multipart/form-data" target="_blank" onsubmit="return submitForm();">
       <div class="form-group mb-3">
         <label for="nome" class="sr-only">Nome:</label>
         <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu Nome*" required>
@@ -210,25 +210,21 @@
 
 <script>
   function submitForm() {
-    // Envia o formulário via AJAX para evitar redirecionamento
-    var formData = new FormData(document.querySelector('form'));
-    fetch('https://formspree.io/f/mzzpgjwq', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-      // Abre uma nova janela com a mensagem de agradecimento
-      var win = window.open('', '_blank', 'width=500,height=300');
-      win.document.write('<h1>Obrigado pelo contato!</h1><p>Já Recebemos sua solicitação. Nossa equipe entrará em contato em breve.</p>');
-    })
-    .catch(error => console.error('Erro ao enviar formulário:', error));
-
-    // Retorna false para evitar redirecionamento
-    return false;
+    // Esconde o formulário
+    document.querySelector('form').style.display = 'none';
+    // Exibe mensagem de agradecimento
+    document.getElementById('mensagem-agradecimento').style.display = 'block';
+    // Adiciona evento de click para fechar a mensagem de agradecimento
+    document.addEventListener('click', function() {
+      document.getElementById('mensagem-agradecimento').style.display = 'none';
+    });
+    return true;
   }
 </script>
-    
+
+<!-- Separação -->
+<hr class="my-4">
+  
 <footer style="background-color: #6c5ce7; /* Cor de fundo roxo turqueza */">
   <div class="container py-4">
     <div class="row">
@@ -243,6 +239,6 @@
   </div>
 </footer>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
