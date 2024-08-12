@@ -1,6 +1,56 @@
 body {
       font-family: 'Calibri', 'Candara', 'Segoe', 'Segoe UI', 'Optima', 'Arial', sans-serif;
-    }
+}
+
+.header {
+  background-color: #40E0D0;
+  padding: 20px;
+  text-align: center;
+}
+
+.header nav {
+  justify-content: space-between;
+}
+
+.header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header nav li {
+  margin-right: 20px;
+}
+
+.header nav a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.header nav a:hover {
+  color: #666;
+}
+
+#pagina-1 {
+  background-color: #40E0D0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px; /* Adicionei um padding-bottom para dar mais espaço ao fim da página */
+}
+
+#pagina-1 h1 {
+  font-weight: bold;
+  color: #000000;
+}
+
+#pagina-1 img {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 /* Estilizar as páginas */
 .pagina {
