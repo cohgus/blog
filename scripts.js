@@ -1,4 +1,17 @@
+// Adicionar evento de clique para navegar entre páginas
+document.addEventListener("DOMContentLoaded", function() {
+  const paginas = document.querySelectorAll(".pagina");
+  const botoes = document.querySelectorAll(".botao");
 
+  botoes.forEach((botao, index) => {
+    botao.addEventListener("click", function() {
+      paginas.forEach((pagina) => {
+        pagina.classList.remove("active");
+      });
+      paginas[index].classList.add("active");
+    });
+  });
+});
 const container = document.querySelector('.container');
 
 const newSection = document.createElement('section');
