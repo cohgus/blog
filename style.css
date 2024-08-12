@@ -35,20 +35,15 @@ body {
 
 #pagina-1 {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
 }
 
-#pagina-1 h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  color: #fff;
-}
-
-#pagina-1 h2 {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 24px;
-  color: #fff;
+#pagina-1 h1, #pagina-1 h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 #pagina-1 img {
