@@ -2,6 +2,42 @@ body {
       font-family: 'Calibri', 'Candara', 'Segoe', 'Segoe UI', 'Optima', 'Arial', sans-serif;
     }
 
+/* Estilizar as páginas */
+.pagina {
+  width: 100%; /* Largura total */
+  height: 100vh; /* Altura total */
+  overflow: hidden; /* Ocultar scrollbar */
+  position: relative; /* Posição relativa */
+}
+
+/* Estilizar as imagens */
+.imagem-full {
+  width: 100%; /* Largura total */
+  height: 100vh; /* Altura total */
+  object-fit: cover; /* Imagem preencher toda a área */
+  position: absolute; /* Posição absoluta */
+  top: 0; /* Topo da página */
+  left: 0; /* Esquerda da página */
+  transition: transform 0.5s; /* Efeito de transição */
+}
+
+/* Efeito de transição entre páginas */
+.pagina:not(:first-child) {
+  transform: translateX(100%); /* Deslocar para a direita */
+}
+
+.pagina.active {
+  transform: translateX(0); /* Voltar à posição original */
+}
+
+/* Limitar o tamanho de exibição entre 50mm */
+@media (max-width: 50mm) {
+  .pagina {
+    width: 50mm; /* Largura máxima */
+    height: 50mm; /* Altura máxima */
+  }
+}
+
 header {
   background-color: #333;
   text-align: center;
