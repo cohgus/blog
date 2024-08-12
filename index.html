@@ -1,36 +1,64 @@
 <!DOCTYPE html>
 <html lang="en" "pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cohgus</title>
-    <!-- Link para o Bootstrap via CDN -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Adicionando fontes personalizadas -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Open Sans', 'Calibri', 'Candara', 'Segoe', 'Segoe UI', 'Optima', 'Arial', sans-serif;
-            background-color: #f5f5f5; /* Adicionando um fundo branco claro */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cohgus</title>
+
+  <!-- Fontes personalizadas -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap via CDN -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <style>
+    body {
+      font-family: 'Open Sans', 'Calibri', 'Candara', 'Segoe', 'Segoe UI', 'Optima', 'Arial', sans-serif;
+      background-color: #f5f5f5; /* Fundo branco claro */
+    }
+
+    /* Estilos para o rodapé */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f1f1f1;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .social-icons a:hover {
+      color: #0073b1; /* Cor do LinkedIn */
+    }
+
+    .social-icons a.instagram:hover {
+      color: #E1306C; /* Cor do Instagram */
+    }
+  </style>
+
+  <!-- Font Awesome para ícones sociais -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
     
 <body>
 <!-- Cabeçalho -->
 <!-- Página 1 -->
-<div id="pagina-1" class="container-fluid bg-primary text-white">
+<div id="pagina-1" class="container-fluid" style="background-color: #333; color: #ffd700;">
   <div class="row">
     <div class="col-md-6">
       <header class="text-center py-4">
         <div class="container">
-          <h1 class="display-4">Gustavo Cohgus</h1>
+          <h1 class="display-4" style="color: #ffd700;">Gustavo Cohgus</h1>
           <nav class="nav justify-content-end">
             <ul class="nav nav-pills">
-              <li class="nav-item"><a class="nav-link text-white" href="#Jornada">Sobre o Livro</a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="#Autoria">Sobre o Autor</a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="#Copidesque">Sobre o Copidesque</a></li>
-              <li class="nav-item"><a class="nav-link text-white" href="#Copywriting">Sobre o Copywriting</a></li>
+              <li class="nav-item"><a class="nav-link" style="color: #ffd700;" href="#Jornada">Sobre o Livro</a></li>
+              <li class="nav-item"><a class="nav-link" style="color: #ffd700;" href="#Autoria">Sobre o Autor</a></li>
+              <li class="nav-item"><a class="nav-link" style="color: #ffd700;" href="#Copidesque">Sobre o Copidesque</a></li>
+              <li class="nav-item"><a class="nav-link" style="color: #ffd700;" href="#Copywriting">Sobre o Copywriting</a></li>
             </ul>
           </nav>
         </div>
@@ -42,29 +70,29 @@
   </div>
 </div>
 <!-- Página 2 -->
-<div id="pagina-2" class="container-fluid">
+<div id="pagina-2" class="container-fluid" style="background-image: linear-gradient(to bottom, #1ABC9C, #FFC5C5); height: 100vh;">
   <div class="row">
     <div class="col-md-6">
       <img src="https://cdn.leonardo.ai/users/74a4f1de-3d35-49e3-94ae-7cbc43f352c5/generations/c6cf0a0e-579e-42de-b5ca-0ee8be2943d5/Default_Create_an_image_featuring_a_meditative_figure_with_cha_0.jpg?w=512" alt="Imagem 2" class="img-fluid w-100">
     </div>
     <div class="col-md-6">
       <!-- Seção de Destaque -->
-      <section class="bg-primary text-white text-center py-5">
+      <section style="background-image: linear-gradient(to bottom, #1ABC9C, #FFC5C5); padding: 20px;">
         <div class="container">
-          <h2 class="mb-3"><strong>Seja Bem-Vindo</strong></h2>
-          <p class="lead">
+          <h2 class="mb-3" style="color: #fff;"><strong>Seja Bem-Vindo</strong></h2>
+          <p class="lead" style="color: #fff;">
             Se a sua empresa trabalha com produção de conteúdo ou mesmo tem a redação de textos e artigos como processo,
             <br>conhecer e utilizar serviços copidesque e escrita copywriting é essencial para alavancar o seu negócio.
           </p>
-          <p class="mb-4">Para saber mais, clique no botão abaixo:</p>
-          <a href="#contato" class="btn btn-light btn-lg">Entre em Contato</a>
+          <p class="mb-4" style="color: #fff;">Para saber mais, clique no botão abaixo:</p>
+          <a href="#contato" class="btn btn-light btn-lg" style="background-color: #fff; color: #1ABC9C;">Entre em Contato</a>
         </div>
       </section>
     </div>
   </div>
 </div>
 <!-- Corpo da página -->
-<div id="pagina-3" class="container mt-4">
+<div id="pagina-3" class="container mt-4" style="background-image: url('https://www.transparenttextures.com/patterns/old-paper.png'); background-size: 100% 100%; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
   <section id="Copywriting">
     <h2 class="mb-3">O que é Copywriting?</h2>
     <p class="lead">Copywriting é a arte e a ciência de criar textos persuasivos, conhecidos como “copy”, com o objetivo de motivar o leitor a realizar uma ação específica, como fazer uma compra, inscrever-se em uma newsletter ou clicar em um link.</p>
@@ -89,30 +117,27 @@
   <hr class="my-4">
 </div>
     <hr>
-<div id="pagina-4" class="container mt-4">
-  <section id="Copidesque">
-    <h2 class="mb-3">O que é Copidesque?</h2>
-    <p class="lead">O copidesque é um profissional especializado na revisão e edição de textos, com a liberdade de reescrever trechos para garantir clareza, coesão e precisão técnica.</p>
-    <p>Diferente do revisor tradicional, que se concentra em correções gramaticais e ortográficas, o copidesque também se preocupa com a estrutura narrativa, a fluidez do texto e a adequação ao público-alvo. Esse trabalho é essencial para que o conteúdo final seja não apenas correto, mas também envolvente e eficaz na comunicação de sua mensagem.</p>
+<div id="pagina-4" class="container mt-4" style="background-image: url('https://www.transparenttextures.com/patterns/old-paper.png'); background-size: 100% 100%; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+  <section id="Copidesque" style="background-color: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+    <h2 class="mb-3" style="color: #333;">O que é Copidesque?</h2>
+    <p class="lead" style="color: #333;">O copidesque é um profissional especializado na revisão e edição de textos, com a liberdade de reescrever trechos para garantir clareza, coesão e precisão técnica.</p>
+    <p style="color: #333;">Diferente do revisor tradicional, que se concentra em correções gramaticais e ortográficas, o copidesque também se preocupa com a estrutura narrativa, a fluidez do texto e a adequação ao público-alvo. Esse trabalho é essencial para que o conteúdo final seja não apenas correto, mas também envolvente e eficaz na comunicação de sua mensagem.</p>
 
-    <h2 class="mb-3">A Importância do Copidesque</h2>
-    <p class="lead">A importância do copidesque reside na sua capacidade de transformar um texto bom em um texto excelente.</p>
-    <p>Ele atua como um leitor crítico, identificando e corrigindo inconsistências, ambiguidades e erros de cronologia que o autor pode não ter percebido. Além disso, o copidesque adapta a linguagem e o estilo do texto para que ele se alinhe perfeitamente com o veículo de publicação e o público-alvo.</p>
+    <h2 class="mb-3" style="color: #333;">A Importância do Copidesque</h2>
+    <p class="lead" style="color: #333;">A importância do copidesque reside na sua capacidade de transformar um texto bom em um texto excelente.</p>
+    <p style="color: #333;">Ele atua como um leitor crítico, identificando e corrigindo inconsistências, ambiguidades e erros de cronologia que o autor pode não ter percebido. Além disso, o copidesque adapta a linguagem e o estilo do texto para que ele se alinhe perfeitamente com o veículo de publicação e o público-alvo.</p>
 
-    <h2 class="mb-3">O Surgimento do Copidesque</h2>
-    <p class="lead">Acredita-se que o copidesque tenha suas raízes nos monges copistas do século XV.</p>
-    <p>Esses monges, ao copiar manuscritos, frequentemente alteravam palavras que consideravam estranhas ou incorretas, resultando em várias versões de um mesmo texto. No século XIX, o termo “copy desk” começou a ser usado em redações jornalísticas para descrever o setor responsável pela edição de matérias antes da publicação.</p>
+    <h2 class="mb-3" style="color: #333;">O Surgimento do Copidesque</h2>
+    <p class="lead" style="color: #333;">Acredita-se que o copidesque tenha suas raízes nos monges copistas do século XV.</p>
+    <p style="color: #333;">Esses monges, ao copiar manuscritos, frequentemente alteravam palavras que consideravam estranhas ou incorretas, resultando em várias versões de um mesmo texto. No século XIX, o termo “copy desk” começou a ser usado em redações jornalísticas para descrever o setor responsável pela edição de matérias antes da publicação.</p>
 
-    <h2 class="mb-3">Evolução do Copidesque</h2>
-    <p class="lead">Com o tempo, o papel do copidesque evoluiu significativamente.</p>
-    <p>Na década de 1950, grandes jornais como o New York Times tinham equipes dedicadas de copidesques, responsáveis por revisar e editar todos os materiais antes da impressão. Com o advento da tecnologia, ferramentas de edição de texto e correção gramatical foram integradas ao trabalho do copidesque, permitindo uma atuação mais rápida e eficiente.</p>
+    <h2 class="mb-3" style="color: #333;">Evolução do Copidesque</h2>
+    <p class="lead" style="color: #333;">Com o tempo, o papel do copidesque evoluiu significativamente.</p>
+    <p style="color: #333;">Na década de 1950, grandes jornais como o New York Times tinham equipes dedicadas de copidesques, responsáveis por revisar e editar todos os materiais antes da impressão. Com o advento da tecnologia, ferramentas de edição de texto e correção gramatical foram integradas ao trabalho do copidesque, permitindo uma atuação mais rápida e eficiente.</p>
 
-    <h2 class="mb-3">A Era Digital e o Copidesque</h2>
-    <p class="lead">Na era digital, o papel do copidesque se tornou ainda mais crucial.</p>
-    <p>Com a explosão de conteúdos online e a necessidade de atualização constante, os copidesques precisam trabalhar em um ritmo acelerado, garantindo que cada texto seja claro, coeso e livre de erros. Além disso, a adaptação de conteúdos para diferentes plataformas digitais exige uma abordagem flexível e inovadora.</p>
-  </section>
-  <hr class="my-4">
-</div>
+    <h2 class="mb-3" style="color: #333;">A Era Digital e o Copidesque</h2>
+    <p class="lead" style="color: #333;">Na era digital, o papel do copidesque se tornou ainda mais crucial.</p>
+    <p style="color: #333;">Com a explosão de conteúdos online e a necessidade de atualização constante, os copidesques precisam trabalhar em um ritmo acelerado, garantindo que cada texto seja claro, coeso e livre de erros. Além disso, a adaptação de conteúdos para diferentes plataformas digitais exige uma ab
 <main>
   <div id="pagina-5" class="container mt-4">
     <section class="livro" id="Jornada">
