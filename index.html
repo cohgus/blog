@@ -103,7 +103,7 @@
   </div>
 </div>
 
-  <div style="border-bottom: 1px solid #ccc; margin: 20px 0;"></div>
+<div style="background-image: linear-gradient(to right, #fff, #ccc, #fff); height: 1px; margin: 20px 0;"></div>
 
 <main>
 <!-- Página 3 -->
@@ -146,23 +146,32 @@
 </div>
   </main>
     
-  <!-- Separação -->
+<!-- Separação -->
 <hr class="my-4">
   
 <!-- Página 5 -->
 <div id="pagina-5" class="container-fluid" style="background-image: url('https://cdn.leonardo.ai/users/74a4f1de-3d35-49e3-94ae-7cbc43f352c5/generations/5416ff1c-e0d7-4bb1-9f0e-3516ed502b2d/Default_leitura_futuro_universo_meditao_0.jpg'); background-size: cover; height: 100vh; display: flex; justify-content: center; align-items: center;">
   <section id="compre" class="comprar p-4" style="background-color: rgba(0, 0, 0, 0.5); color: #fff; padding: 20px; border-radius: 10px;">
-    <h2 class="mb-3" style="color: #fff;">Embarque em uma Jornada também</h2>
-    <p style="color: #fff;">Adquira agora e comece a sua jornada!</p>
+    <h2 class="mb-3" style="color: #fff;">Garanta o sucesso em sua trajetória com Projeto de Vida</h2>
+    <p style="color: #fff;">Adquira agora o livro e comece a sua Jornada!</p>
     <div class="row">
       <div class="col-md-4 text-center">
-        <a href="#" class="btn btn-dark btn-lg" style="background-color: #2f4f7f; border-color: #2f4f7f;">em formato digital</a>
+        <a href="https://cohgus.herospark.co/projetodevidaemjornada" class="btn btn-dark btn-lg" style="background-color: #2f4f7f; border-color: #2f4f7f;">livro digital</a>
       </div>
       <div class="col-md-4 text-center">
-        <a href="https://loja.uiclap.com/titulo/ua63043/" target="_blank" class="btn btn-dark btn-lg" style="background-color: #2f4f7f; border-color: #2f4f7f;">impresso via editora</a>
+        <a href="https://loja.uiclap.com/titulo/ua63043/" target="_blank" class="btn btn-dark btn-lg" style="background-color: #2f4f7f; border-color: #2f4f7f;">livro impresso</a>
       </div>
       <div class="col-md-4 text-center">
-        <a href="#" class="btn btn-dark btn-lg" style="background-color: #2f4f7f; border-color: #2f4f7f;">outra opção</a>
+        <a onclick="mostrarMensagem()" href="#" class="btn btn-dark btn-lg" style="background-color: #2f4f7f; border-color: #2f4f7f;">livro Kindle</a>
+         <div id="mensagem" style="display: none;">Em breve disponível em Kindle</div>
+        <script>
+        function mostrarMensagem() {
+        document.getElementById("mensagem").style.display = "block";
+        setTimeout(function() {
+        document.getElementById("mensagem").style.display = "none";
+        }, 3000); // 3000 milissegundos = 3 segundos
+        }
+        </script>
       </div>
     </div>
   </section>
