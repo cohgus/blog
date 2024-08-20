@@ -244,3 +244,29 @@ footer p {
 footer i {
   margin: 0 0.5rem;
 }
+
+/* Adicione esses estilos no seu arquivo CSS */
+.seta-cima, .seta-baixo {
+  position: fixed;
+  z-index: 1000; /* Garante que as setas fiquem em frente ao conteúdo */
+  font-size: 24px; /* Tamanho da seta */
+  color: #fff; /* Cor da seta */
+  background-color: #333; /* Cor do fundo da seta */
+  padding: 10px; /* Espaçamento interno da seta */
+  border-radius: 50%; /* Arredonda as bordas da seta */
+  cursor: pointer; /* Muda o cursor para uma mão quando passa sobre a seta */
+}
+
+.seta-cima {
+  top: 20px; /* Posição da seta para cima */
+  right: 20px; /* Posição da seta para cima */
+}
+
+.seta-baixo {
+  bottom: 20px; /* Posição da seta para baixo */
+  right: 20px; /* Posição da seta para baixo */
+}
+
+.seta-cima:hover, .seta-baixo:hover {
+  background-color: #444; /* Cor do fundo da seta quando passa sobre */
+}
