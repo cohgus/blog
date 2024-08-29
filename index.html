@@ -91,7 +91,8 @@
 <body>
   
 <!-- Cabeçalho -->
-<header class="header"> <a name="top"></a>
+<header class="header">
+  <a name="top"></a>
   <nav class="nav justify-content-end">
     <ul class="nav nav-pills">
       <li class="nav-item"><a class="nav-link" href="#Jornada">Sobre o Livro</a></li>
@@ -106,8 +107,10 @@
 <!-- Caixa de mensagem do chatbot -->
 <div id="chatbot-message-box" class="position-fixed bottom-0 right-0 p-3 bg-white border rounded shadow">
   <h2>Olá! Posso ajudar?</h2>
-  <button id="email-button" class="btn btn-primary">Enviar email</button>
-  <button id="orcamento-button" class="btn btn-primary">Solicitar orçamento</button>
+  <div class="btn-group">
+    <button id="email-button" class="btn btn-primary">Enviar email</button>
+    <button id="orcamento-button" class="btn btn-primary">Solicitar orçamento</button>
+  </div>
 </div>
 
 <script>
