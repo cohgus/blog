@@ -41,17 +41,3 @@ form.addEventListener('submit', event => {
 
   form.reset();
 });
-
-// Adicione evento de clique ao emoji
-document.getElementById("chatbot-emoji").addEventListener("click", function() {
-  document.getElementById("chatbot-message-box").classList.toggle("show");
-});
-
-// Adicione eventos aos botões
-document.getElementById("email-button").addEventListener("click", function() {
-  window.location.href = "mailto:cohgus@gmail.com";
-});
-
-document.getElementById("orcamento-button").addEventListener("click", function() {
-  window.location.href = "#contato";
-});
