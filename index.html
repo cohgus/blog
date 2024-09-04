@@ -105,40 +105,13 @@
 </header>
 
 <!-- Caixa de mensagem do chatbot -->
-<div id="chatbot-message-box" class="position-fixed bottom-0 right-0 p-3 bg-white border rounded shadow">
-  <h2>Olá! Posso ajudar?</h2>
-  <div class="btn-group">
-    <button id="email-button" class="btn btn-primary">Enviar email</button>
-    <button id="orcamento-button" class="btn btn-primary">Solicitar orçamento</button>
+<div id="chatbot-container">
+  <div id="chatbot-message-box" class="position-fixed bottom-0 right-0 p-3 bg-white border rounded shadow">
+    <!-- O conteúdo do chatbot será renderizado aqui -->
   </div>
 </div>
 
-<script>
-  // Adicione evento de clique ao emoji
-  document.getElementById("chatbot-emoji").addEventListener("click", function() {
-    document.getElementById("chatbot-message-box").classList.toggle("show");
-  });
-
-  // Adicione eventos aos botões
-  document.getElementById("email-button").addEventListener("click", function() {
-    window.location.href = "mailto:cohgus@gmail.com";
-  });
-
-  document.getElementById("orcamento-button").addEventListener("click", function() {
-    window.location.href = "#contato";
-  });
-</script>
-
-<style>
-  #chatbot-message-box {
-    display: none;
-    z-index: 1000;
-  }
-
-  #chatbot-message-box.show {
-    display: block;
-  }
-</style>
+<script src="chatbot.js"></script>
 
 <!-- Página 1 -->
 <div id="pagina-1" class="container-fluid py-5" style="background-color: #1ABC9C; padding-bottom: 50px;">
