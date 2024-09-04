@@ -80,3 +80,7 @@ const chatbot = new Chatbot();
 
 // Renderize o chatbot
 chatbot.render();
+
+document.getElementById('chatbot-button').addEventListener('click', function() {
+  document.getElementById('chatbot-message-box').style.display = 'block';
+});
