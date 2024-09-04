@@ -93,14 +93,17 @@
 <!-- Cabeçalho -->
 <header class="header">
   <a name="top"></a>
-  <nav class="nav justify-content-end">
+  <nav class="nav justify-content-between">
+    <div class="logo">
+      <img src="https://scontent.fldb4-1.fna.fbcdn.net/v/t39.30808-6/458108991_8334031489990006_49949967034009123_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEx0pXdUj8ZOxxhT5SGyHzOt_i44nlSt5C3-LjieVK3kFWUYKU9SNiX3ImbAtvI8REsEV4jGm7kKOjikkIEvrXE&_nc_ohc=HeKfI7229i4Q7kNvgHoagJB&_nc_ht=scontent.fldb4-1.fna&oh=00_AYCPopX4TZKN8PaCqPQbGRpAVWjga3SkCf6IlPGR9gdK7A&oe=66DE36C6" alt="Logo" width="50" height="50">
+    </div>
     <ul class="nav nav-pills">
       <li class="nav-item"><a class="nav-link" href="#Jornada">Sobre o Livro</a></li>
       <li class="nav-item"><a class="nav-link" href="#Autoria">Sobre o Autor</a></li>
       <li class="nav-item"><a class="nav-link" href="#Copywriting">O que é Copywriting</a></li>
       <li class="nav-item"><a class="nav-link" href="#Copidesque">O que é Copidesque</a></li>
     </ul>
-    <div id="chatbot-emoji" class="float-right">🦾 Ajuda</div>
+    <button id="chatbot-button" class="btn btn-primary float-right">Chatbot</button>
   </nav>
 </header>
 
@@ -113,6 +116,23 @@
 
 <script src="chatbot.js"></script>
 
+<style>
+  #chatbot-button {
+    margin-left: 10px;
+  }
+
+  .logo {
+    margin-right: 10px;
+  }
+
+  #chatbot-message-box {
+    display: none;
+  }
+
+  #chatbot-button:hover {
+    cursor: pointer;
+  }
+</style>
 <!-- Página 1 -->
 <div id="pagina-1" class="container-fluid py-5" style="background-color: #1ABC9C; padding-bottom: 50px;">
   <div class="row">
