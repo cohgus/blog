@@ -91,19 +91,16 @@
 <body>
   
 <!-- Cabeçalho -->
-<header class="header">
-  <a name="top"></a>
-  <nav class="nav justify-content-between">
-    <div class="logo">
-      <img src="https://scontent.fldb4-1.fna.fbcdn.net/v/t39.30808-6/458108991_8334031489990006_49949967034009123_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEx0pXdUj8ZOxxhT5SGyHzOt_i44nlSt5C3-LjieVK3kFWUYKU9SNiX3ImbAtvI8REsEV4jGm7kKOjikkIEvrXE&_nc_ohc=HeKfI7229i4Q7kNvgHoagJB&_nc_ht=scontent.fldb4-1.fna&oh=00_AYCPopX4TZKN8PaCqPQbGRpAVWjga3SkCf6IlPGR9gdK7A&oe=66DE36C6" alt="Logo" width="50" height="50">
-    </div>
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.jsdelivr.net/npm/@github/generic-octicons@latest/dist/">
+<header class="header" style="background-image: url('https://photos.fife.usercontent.google.com/pw/AP1GczOh4vKpRLxHyjku-C1utk2d2mhNO-L88XHqzb2mKNynxoP8aUG3uelT=w1366-h137-s-no-gm?authuser=0'); background-size: cover; height: 150px; display: flex; justify-content: center; align-items: center;">
+  <nav class="nav justify-content-between" style="width: 80%; margin: 0 auto;">
     <ul class="nav nav-pills">
-      <li class="nav-item"><a class="nav-link" href="#Jornada">Sobre o Livro</a></li>
-      <li class="nav-item"><a class="nav-link" href="#Autoria">Sobre o Autor</a></li>
-      <li class="nav-item"><a class="nav-link" href="#Copywriting">O que é Copywriting</a></li>
-      <li class="nav-item"><a class="nav-link" href="#Copidesque">O que é Copidesque</a></li>
+      <li class="nav-item"><a class="nav-link" href="#Jornada" style="color: #fff;">Sobre o Livro</a></li>
+      <li class="nav-item"><a class="nav-link" href="#Autoria" style="color: #fff;">Sobre o Autor</a></li>
+      <li class="nav-item"><a class="nav-link" href="#Copywriting" style="color: #fff;">O que é Copywriting</a></li>
+      <li class="nav-item"><a class="nav-link" href="#Copidesque" style="color: #fff;">O que é Copidesque</a></li>
     </ul>
-    <button id="chatbot-button" class="btn btn-primary float-right">Chatbot</button>
+    <button id="chatbot-button" class="btn btn-primary float-right" style="margin-top: 10px;">Ajuda</button>
   </nav>
 </header>
 
@@ -120,10 +117,6 @@
     margin-left: 10px;
   }
 
-  .logo {
-    margin-right: 10px;
-  }
-
   #chatbot-message-box {
     display: none;
   }
@@ -131,8 +124,11 @@
   #chatbot-button:hover {
     cursor: pointer;
   }
-</style>
 
+  .header {
+    color: #fff;
+  }
+</style>
   
 <!-- Página 1 -->
 <div id="pagina-1" class="container-fluid py-5" style="background-color: #1ABC9C; padding-bottom: 50px;">
@@ -375,28 +371,28 @@
 
 <!-- Página de galeria -->
 <div id="galeria">
-  <h1 class="lead text-center" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); font-size: 40px; font-weight: bold;">Reflexões</h1>
+  <h1 class="lead text-center" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); font-size: 40px; font-weight: bold;">Galeria de Ideias</h1>
   <div class="container mt-4" style="background-color: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
     <section class="gallery">
       <div class="row">
         <div class="col-md-6 col-sm-12">
           <div class="img-container">
-            <img src="https://scontent.fldb4-1.fna.fbcdn.net/v/t39.30808-6/454899186_8186759351383888_4619303201937706005_n.jpg?stp=dst-jpg_p526x296&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=DAhi-sYSQbYQ7kNvgEhm1EI&_nc_ht=scontent.fldb4-1.fna&oh=00_AYBz0s2jqCPLCeHexz5bCAUwPiKXqN2BAYpoaz3JLIvpJA&oe=66CFF700" alt="Imagem 1" class="img-fluid">
+            <img src="https://photos.fife.usercontent.google.com/pw/AP1GczO7__JytHSWMyVMTWNrTKG4JyJXOVM2brDsaZAuYxr0vhWhc0MIv17x=w641-h641-s-no-gm?authuser=0" alt="Imagem 1" class="img-fluid">
           </div>
         </div>
         <div class="col-md-6 col-sm-12">
           <div class="img-container">
-            <img src="https://scontent.fldb4-1.fna.fbcdn.net/v/t39.30808-6/455339495_8216789308380892_3540648241450041857_n.jpg?stp=dst-jpg_p526x296&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=CACIwbIgodkQ7kNvgFtBqyB&_nc_ht=scontent.fldb4-1.fna&oh=00_AYDaZCvIUAL6e44h_pib_uVFsY1kjrrumy-OnRFOS1WoUA&oe=66CFFEE0" alt="Imagem 2" class="img-fluid">
+            <img src="https://photos.fife.usercontent.google.com/pw/AP1GczOjLznhW3bLpyNZbGTSAWd3RSXES4V0IQSApJdgq7xQdwN9p9gLdS3o=w641-h641-s-no-gm?authuser=0" alt="Imagem 2" class="img-fluid">
           </div>
         </div>
         <div class="col-md-6 col-sm-12">
           <div class="img-container">
-            <img src="https://scontent.fldb4-1.fna.fbcdn.net/v/t39.30808-6/455246922_8222340294492460_760726508434141043_n.jpg?stp=dst-jpg_p526x296&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=oL4a2nsb60wQ7kNvgGYjybe&_nc_ht=scontent.fldb4-1.fna&oh=00_AYCSC0RTIKRbKMSn7v_iAAgMxmNeIKV-yxeFSNYQN75WzQ&oe=66CFF141" alt="Imagem 3" class="img-fluid">
+            <img src="https://photos.fife.usercontent.google.com/pw/AP1GczNn2yAlmKW7Uu9PoD8TTK7ZPBTkQknpe27PsGBHX4NyyEAAPjC-xg1k=w641-h641-s-no-gm?authuser=0" alt="Imagem 3" class="img-fluid">
           </div>
         </div>
         <div class="col-md-6 col-sm-12">
           <div class="img-container">
-            <img src="https://scontent.fldb4-1.fna.fbcdn.net/v/t39.30808-6/456690719_8267946883265134_7990474412170458703_n.jpg?stp=dst-jpg_p526x296&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFaJVjpdr41BCOCiSf3F5Vba45152K6kAlrjnXnYrqQCaUWCMAymMCw9UyS4IKx36SFWOgMvfZx4J2-iAEefaut&_nc_ohc=Y8j99dp9TYEQ7kNvgFoX8d5&_nc_ht=scontent.fldb4-1.fna&oh=00_AYDqmeFMnJz-pqJCIjAIy51NnrjB91Ero3UPbjZjcPuqCA&oe=66D58A98" alt="Imagem 4" class="img-fluid">
+            <img src="https://photos.fife.usercontent.google.com/pw/AP1GczOSutRCZZYTgj9uTEYwz_dErJLThk1O_jQZHjCKiasitn0vylxsFg8p=w641-h641-s-no-gm?authuser=0" alt="Imagem 4" class="img-fluid">
           </div>
         </div>
       </div>
