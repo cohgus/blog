@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gustavo Cohgus</title>
+  <link rel="stylesheet" href="styles/style.css">
+
+  <!-- Fontes personalizadas -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap via CDN -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Open Sans', 'Calibri', 'Candara', 'Segoe', 'Segoe UI', 'Optima', 'Arial', sans-serif;
+      background-color: #f5f5f5; /* Fundo branco claro */
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f1f1f1;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    .social-icons a:hover {
+      color: #0073b1; /* Cor do LinkedIn */
+    }
+
+    .social-icons a.instagram:hover {
+      color: #E1306C; /* Cor do Instagram */
+    }
+    
+  </style>
+
+  <!-- Font Awesome para ícones sociais -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/126/126486.png" />
+</head>
+    
+<body>
+  
+<!-- Cabeçalho -->
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.jsdelivr.net/npm/@github/generic-octicons@latest/dist/">
+<header class="header" style="background-image: url('https://lh3.googleusercontent.com/pw/AP1GczM-yPyPpFXB1S3CHpbAty9cuXVMuU7SFgqnlULKEGJb7aJJ5gwcabsWpAelF9emMI7k0VaGwFuy-G5shE-2s1O7CI_NR45h-ghpNvTihqeiq0A55yF16-ST_NrOoNowiMaoV6Tps3uwdwUeAsXrqxaW=w1366-h137-s-no-gm?authuser=0'); background-size: cover; height: 150px; display: flex; justify-content: center; align-items: center;">
+  <nav class="nav justify-content-center" style="width: 80%; margin: 0 auto;">
+    <ul class="nav nav-pills justify-content-center">
+      <li class="nav-item"><a class="nav-link" href="#Jornada" style="color: #000000; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">Sobre o Livro</a></li>
+      <li class="nav-item"><a class="nav-link" href="#Autoria" style="color: #000000; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">Sobre o Autor</a></li>
+      <li class="nav-item"><a class="nav-link" href="#Copywriting" style="color: #000000; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">O que é Copywriting</a></li>
+      <li class="nav-item"><a class="nav-link" href="#Copidesque" style="color: #000000; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">O que é Copidesque</a></li>
+    </ul>
+    </nav>
+</header>
