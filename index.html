@@ -3,176 +3,696 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gustavo Cohgus & aiBotize: Agentes de IA para WhatsApp</title>
+  <title>Gustavo Cohgus & aiBotize: Agentes de IA Revolucionários para WhatsApp</title>
   <!-- Fontes e Ícones -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* Existing styles retained for brevity; minor adjustments for new focus */
-    .glow-text { color: #fff; text-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
-    /* ... (full styles from original) ... */
+    /* --- ESTILOS GERAIS E RESET --- */
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.8;
+      color: #ffdab9; /* Warm peach for text */
+      background: radial-gradient(circle at top right, #1c0000 0%, #0a0a0a 60%, #150000 100%); /* Dark with warm red undertones */
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      color: #ff4500; /* Warm orange for headings */
+    }
+    p {
+      margin-bottom: 20px;
+      font-weight: 300;
+      color: #ffdead; /* Navajo white warm */
+    }
+    /* --- COMPONENTES DE DESIGN --- */
+    /* Glassmorphism Card with Warm Glow */
+    .glass-card {
+      background: rgba(255, 69, 0, 0.05); /* Orange tint */
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 99, 71, 0.2); /* Tomato border */
+      border-radius: 24px;
+      padding: 4rem;
+      margin: 60px auto;
+      max-width: 1200px;
+      box-shadow: 0 8px 32px 0 rgba(255, 69, 0, 0.3);
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, #ff6347, transparent); /* Tomato gradient */
+    }
+    .glass-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(255, 99, 71, 0.4);
+      border-color: rgba(255, 165, 0, 0.5); /* Orange */
+    }
+    /* Botões com Gradiente Animado Quente */
+    .gradient-btn {
+      background: linear-gradient(45deg, #ff4500, #ff8c00, #ff4500); /* Orange to dark orange */
+      background-size: 200% 200%;
+      animation: gradientShift 3s ease infinite;
+      color: #fff;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 0 30px rgba(255, 69, 0, 0.5);
+    }
+    .gradient-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 50px rgba(255, 140, 0, 0.7);
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    /* Texto Neon/Glow Quente */
+    .glow-text {
+      color: #fff;
+      text-shadow: 0 0 15px rgba(255, 69, 0, 0.7), 0 0 30px rgba(255, 140, 0, 0.5);
+      animation: glowPulse 2s infinite;
+    }
+    @keyframes glowPulse {
+      0%, 100% { text-shadow: 0 0 10px rgba(255, 69, 0, 0.5); }
+      50% { text-shadow: 0 0 30px rgba(255, 140, 0, 0.8); }
+    }
+    .highlight-orange {
+      color: #ffa500;
+      font-weight: 700;
+    }
+    /* Terminal de Código com Toque Quente */
+    .terminal {
+      background: #200000; /* Dark red */
+      border: 1px solid #400000;
+      border-radius: 12px;
+      padding: 30px;
+      font-family: 'Fira Code', monospace;
+      font-size: 1rem;
+      color: #ffdead;
+      box-shadow: inset 0 0 25px rgba(255, 0, 0, 0.2);
+      position: relative;
+      margin-top: 40px;
+    }
+    .terminal::before {
+      content: '● ● ●';
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      color: #ff4500;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+    .cmd-line::before {
+      content: '>';
+      color: #ff6347;
+      margin-right: 10px;
+    }
+    /* Parallax com Overlay Quente */
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 500px;
+      position: relative;
+    }
+    .parallax::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255, 69, 0, 0.2); /* Warm orange overlay */
+    }
+    /* Cards Flip 3D Avançados */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      padding: 30px;
+    }
+    .card-flip {
+      perspective: 1500px;
+      height: 400px;
+      cursor: pointer;
+    }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-style: preserve-3d;
+    }
+    .card-flip:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 99, 71, 0.3);
+    }
+    .card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.8);
+    }
+    .card-back {
+      background: linear-gradient(135deg, #8b0000 0%, #0a0a0a 100%); /* Dark red to black */
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      text-align: center;
+      color: #ffd700; /* Gold warm */
+    }
+    /* Header & Nav com Warm Hover */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 69, 0, 0.2);
+      padding: 20px 0;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 50px;
+    }
+    nav a {
+      color: #ffdead;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+    nav a:hover {
+      color: #ff4500;
+      text-shadow: 0 0 15px rgba(255, 69, 0, 0.7);
+    }
+    /* Inputs do Formulário com Focus Quente */
+    input, textarea {
+      width: 100%;
+      background: rgba(139, 0, 0, 0.3); /* Dark red */
+      border: 1px solid #400000;
+      border-radius: 10px;
+      padding: 20px;
+      color: #fff;
+      margin-bottom: 20px;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      box-sizing: border-box;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #ff4500;
+      box-shadow: 0 0 20px rgba(255, 69, 0, 0.4);
+    }
+    /* Animação de Entrada Suave */
+    section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Partículas de Fundo para Efeito Futurista */
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    /* Testimonial Cards */
+    .testimonial-card {
+      background: rgba(255, 99, 71, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 20px;
+      box-shadow: 0 0 20px rgba(255, 69, 0, 0.3);
+      text-align: center;
+    }
+    /* FAQ Accordion */
+    .faq-item {
+      margin-bottom: 20px;
+    }
+    .faq-question {
+      background: rgba(139, 0, 0, 0.4);
+      padding: 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .faq-answer {
+      display: none;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 0 0 10px 10px;
+    }
+    /* Footer */
+    footer {
+      background: #100000;
+      padding: 50px;
+      text-align: center;
+      border-top: 1px solid #400000;
+      margin-top: 100px;
+    }
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .glass-card { margin: 30px; padding: 2rem; }
+      nav ul { gap: 25px; font-size: 0.9rem; }
+      h1 { font-size: 2.5rem; }
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+  <!-- Partículas de Fundo -->
+  <canvas id="particles"></canvas>
+
   <!-- Barra de Navegação -->
   <header>
     <nav>
       <ul>
         <li><a href="#home">Início</a></li>
-        <li><a href="#conceito">O Conceito</a></li>
+        <li><a href="#conceito">Conceito</a></li>
+        <li><a href="#beneficios">Benefícios</a></li>
         <li><a href="#servicos">Soluções</a></li>
+        <li><a href="#cases">Cases</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
   </header>
-  <div style="height: 80px;"></div>
+  <div style="height: 100px;"></div>
+
   <!-- Hero Section -->
-  <section id="home" class="glass-card" style="text-align: center; margin-top: 60px;">
-    <div class="aibotize-meta" style="margin-bottom: 20px;">
-      <span style="background: #10b981; color: #000; padding: 4px 12px; border-radius: 20px; font-weight: 800; font-size: 0.7rem; text-transform: uppercase;">Powered by aiBotize</span>
+  <section id="home" class="glass-card" style="text-align: center; margin-top: 80px;">
+    <div class="aibotize-meta" style="margin-bottom: 30px;">
+      <span style="background: #ff4500; color: #000; padding: 6px 15px; border-radius: 25px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase;">Powered by aiBotize.com</span>
     </div>
-    <h1 class="glow-text" style="font-size: 3rem; line-height: 1.1;">
-      Agentes de IA para WhatsApp<br> <span style="color: #a78bfa;">com Gustavo Cohgus</span>
+    <h1 class="glow-text" style="font-size: 4rem; line-height: 1.2;">
+      Agentes de IA para WhatsApp<br> <span style="color: #ff8c00;">Desenvolvidos por Gustavo Cohgus</span>
     </h1>
-    <p style="font-size: 1.2rem; max-width: 600px; margin: 20px auto;">
-      Automatize funções internas e melhore interações com clientes via aiBotize.com
+    <p style="font-size: 1.5rem; max-width: 800px; margin: 30px auto;">
+      Imagine um agente de IA que não só responde mensagens no WhatsApp, mas antecipa necessidades, integra com seus sistemas internos, respeita todas as regras de negócio da sua empresa e transforma interações comuns em experiências inesquecíveis. Com aiBotize.com e Gustavo Cohgus, isso é realidade.
     </p>
-    <p style="color: #9ca3af;">
-      Design personalizado para eficiência 24/7, integração seamless e respostas humanizadas.
+    <p style="color: #ffd700; font-size: 1.2rem;">
+      Automatize fluxos complexos, reduza tempos de resposta para segundos e eleve o engajamento com clientes a níveis nunca vistos – tudo enquanto mantém conformidade total com regulamentações e políticas internas.
     </p>
     <br>
-    <a href="#servicos" class="gradient-btn">Explorar Soluções</a>
+    <a href="#contato" class="gradient-btn">Contrate Agora e Revolucione Seu Negócio</a>
   </section>
-  <!-- Parallax 1 -->
-  <div class="parallax" style="background-image: url('https://img.freepik.com/premium-photo/abstract-background-images-wallpaper-ai-generated_643360-62055.jpg');"></div>
-  <!-- O Conceito -->
+
+  <!-- Parallax 1: Abstração Futurista Quente -->
+  <div class="parallax" style="background-image: url('https://img.freepik.com/premium-photo/abstract-background-images-wallpaper-ai-generated_643360-62055.jpg?w=1380'); height: 600px;"></div>
+
+  <!-- Seção Conceito -->
   <section id="conceito" class="glass-card">
-    <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
-      <div style="flex: 1; min-width: 300px;">
-        <h2 class="glow-text">Transformando Comunicação Empresarial</h2>
+    <h2 class="glow-text" style="text-align: center; font-size: 3rem;">O Conceito: IA que Pensa Como Sua Equipe, Mas Nunca Dorme</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 50px; align-items: stretch;">
+      <div style="flex: 1; min-width: 400px;">
         <p>
-          Gustavo Cohgus e aiBotize projetam agentes de IA que automatizam atendimentos no WhatsApp, reduzindo tempos de resposta e elevando interações a níveis humanizados.
+          No mundo acelerado das redes sociais e comunicações instantâneas, como Instagram, Facebook e WhatsApp, as empresas enfrentam o desafio de responder rapidamente a milhares de interações diárias. Gustavo Cohgus, em parceria com aiBotize.com, projeta agentes de IA que vão além do básico: eles interpretam contextos complexos, aplicam regras de negócio personalizadas e integram seamlessly com CRMs, ERPs e plataformas de e-commerce.
         </p>
         <p>
-          Integre CRM, e-mails e mais para um hub inteligente que pensa como sua equipe, garantindo precisão e personalização.
+          Pense em um agente que, ao receber uma consulta sobre um produto via WhatsApp, verifica estoque em tempo real, aplica descontos baseados em regras promocionais específicas da sua empresa, sugere upsells inteligentes e até agenda chamadas com vendedores humanos – tudo sem violar privacidade de dados ou políticas internas. É como ter uma equipe de especialistas 24/7, mas sem custos exorbitantes.
         </p>
-        <div style="background: rgba(109, 40, 217, 0.2); border-left: 4px solid #a78bfa; padding: 15px; margin-top: 20px; font-style: italic;">
-          "A IA não substitui; ela potencializa seu negócio."
+        <p>
+          Inspirado em exemplos clássicos de redes sociais, como os bots do Facebook Messenger que gerenciam pedidos em restaurantes ou os assistentes do Instagram que lidam com DMs de influenciadores, nossos agentes elevam isso para o WhatsApp Business, com suporte a multimídia, voz e integrações avançadas. O resultado? Clientes satisfeitos que voltam sempre, e sua equipe livre para focar em estratégias de alto nível.
+        </p>
+        <div style="background: rgba(255, 140, 0, 0.2); border-left: 5px solid #ff4500; padding: 20px; margin-top: 30px; font-style: italic; font-size: 1.1rem;">
+          "Não é só automação; é inteligência que respeita suas regras e conquista corações. Com aiBotize.com, seu WhatsApp se torna uma máquina de vendas infalível."
         </div>
       </div>
-      <div style="flex: 1; min-width: 300px;">
-        <div class="terminal">
-          <p class="cmd-line">INICIANDO AGENTE DE IA...</p>
+      <div style="flex: 1; min-width: 400px;">
+        <div class="terminal" style="height: 100%;">
+          <p class="cmd-line">INICIANDO AGENTE DE IA AVANÇADO...</p>
           <br>
-          <p><span style="color: #a78bfa;">1. DETECÇÃO:</span> Interpreta mensagens multimídia.</p>
-          <p><span style="color: #a78bfa;">2. AUTOMAÇÃO:</span> Integra funções internas como leads e campanhas.</p>
-          <p><span style="color: #a78bfa;">3. RESPOSTA:</span> Humanizada e instantânea.</p>
+          <p><span style="color: #ff6347;">1. DETECÇÃO INTELIGENTE:</span> Analisa mensagens de texto, voz, imagens e vídeos em tempo real, extraindo intenções com precisão neuro-simbólica.</p>
+          <p><span style="color: #ff6347;">2. APLICAÇÃO DE REGRAS:</span> Verifica conformidade com políticas de negócio, como limites de desconto, horários de operação e regulamentações GDPR/CCPA.</p>
+          <p><span style="color: #ff6347;">3. AUTOMAÇÃO PERSONALIZADA:</span> Integra com APIs de CRM (ex: Salesforce), e-commerce (ex: Shopify) e redes sociais para ações seamless.</p>
+          <p><span style="color: #ff6347;">4. RESPOSTA HUMANIZADA:</span> Gera respostas empáticas, multilíngues, com sugestões proativas que impulsionam conversões.</p>
+          <p><span style="color: #ff6347;">5. RELATÓRIOS ANALÍTICOS:</span> Fornece insights sobre interações, taxas de conversão e pontos de melhoria.</p>
           <br>
-          <p class="cmd-line"><span style="color: #10b981;">EFICIÊNCIA OTIMIZADA.</span></p>
+          <p class="cmd-line"><span style="color: #ffd700;">SISTEMA OTIMIZADO PARA MÁXIMO DESEMPENHO.</span></p>
         </div>
       </div>
     </div>
   </section>
-  <!-- Parallax 2 -->
-  <div class="parallax" style="background-image: url('https://th.bing.com/th/id/OIG3.b.2_Cl.1s8r4_2?pid=ImgGn');"></div>
-  <!-- Serviços -->
+
+  <!-- Parallax 2: Conexão Humana-Máquina Quente -->
+  <div class="parallax" style="background-image: url('https://th.bing.com/th/id/OIG3.b.2_Cl.1s8r4_2?pid=ImgGn&w=1024&h=1024'); height: 600px;"></div>
+
+  <!-- Seção Benefícios -->
+  <section id="beneficios" class="glass-card">
+    <h2 class="glow-text" style="text-align: center; font-size: 3rem;">Benefícios que Fazem Sua Empresa Voar Alto</h2>
+    <p style="text-align: center; max-width: 900px; margin: 0 auto 50px; font-size: 1.3rem;">
+      Descubra como nossos agentes de IA transformam desafios em oportunidades, com exemplos reais inspirados em gigantes das redes sociais como o WhatsApp de marcas globais.
+    </p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+      <div class="benefit-item" style="background: rgba(255, 99, 71, 0.15); padding: 30px; border-radius: 20px; box-shadow: 0 0 25px rgba(255, 69, 0, 0.3);">
+        <i class="fas fa-rocket" style="font-size: 3rem; color: #ff4500; margin-bottom: 20px;"></i>
+        <h3>Eficiência 24/7</h3>
+        <p>
+          Seus clientes não esperam mais por respostas. Como os bots do Twitter (agora X) que lidam com consultas em tempo real, nossos agentes respondem instantaneamente, reduzindo o tempo médio de resposta de horas para segundos. Imagine um e-commerce onde pedidos são processados automaticamente via WhatsApp, integrando com estoques e pagamentos – tudo conforme suas regras de frete e devoluções.
+        </p>
+      </div>
+      <div class="benefit-item" style="background: rgba(255, 99, 71, 0.15); padding: 30px; border-radius: 20px; box-shadow: 0 0 25px rgba(255, 69, 0, 0.3);">
+        <i class="fas fa-shield-alt" style="font-size: 3rem; color: #ff4500; margin-bottom: 20px;"></i>
+        <h3>Conformidade Total</h3>
+        <p>
+          Preocupado com regras de negócio? Nossos agentes são programados para seguir à risca políticas internas, como limites de crédito em vendas B2B ou restrições etárias em produtos. Inspirado em plataformas como LinkedIn, onde bots gerenciam conexões profissionais com privacidade, garantimos que cada interação respeite leis de dados e normas da sua empresa, evitando riscos legais.
+        </p>
+      </div>
+      <div class="benefit-item" style="background: rgba(255, 99, 71, 0.15); padding: 30px; border-radius: 20px; box-shadow: 0 0 25px rgba(255, 69, 0, 0.3);">
+        <i class="fas fa-users" style="font-size: 3rem; color: #ff4500; margin-bottom: 20px;"></i>
+        <h3>Engajamento Humanizado</h3>
+        <p>
+          Esqueça respostas robóticas. Como os chatbots do Instagram que conversam como amigos, nossos agentes usam linguagem natural, emojis e personalização baseada em histórico para criar conexões reais. Para uma rede de restaurantes, por exemplo, o agente sugere pratos com base em preferências passadas, aplica cupons e até envia fotos apetitosas – tudo dentro das suas regras promocionais.
+        </p>
+      </div>
+      <div class="benefit-item" style="background: rgba(255, 99, 71, 0.15); padding: 30px; border-radius: 20px; box-shadow: 0 0 25px rgba(255, 69, 0, 0.3);">
+        <i class="fas fa-chart-line" style="font-size: 3rem; color: #ff4500; margin-bottom: 20px;"></i>
+        <h3>Crescimento Escalável</h3>
+        <p>
+          Comece pequeno e escale para o infinito. Inspirado em cases como o uso de bots no TikTok para viralizar conteúdos, nossos agentes lidam com picos de tráfego sem custos extras, gerando leads qualificados e aumentando vendas. Integre com ferramentas de análise para relatórios detalhados, ajudando a refinar estratégias e maximizar ROI.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax 3: Tecnologia em Ação -->
+  <div class="parallax" style="background-image: url('https://cdn.leonardo.ai/users/74a4f1de-3d35-49e3-94ae-7cbc43f352c5/generations/b0690fb0-2eab-4327-80a4-cfe9abc3f934/Default_vida_leitura_futuro_universo_tecnologia_0.jpg'); height: 600px;"></div>
+
+  <!-- Seção Soluções -->
   <section id="servicos" class="glass-card">
-    <h2 style="text-align: center; margin-bottom: 50px;">Nossas Soluções em AI para WhatsApp</h2>
+    <h2 class="glow-text" style="text-align: center; font-size: 3rem;">Soluções Personalizadas para Seu Sucesso</h2>
+    <p style="text-align: center; max-width: 900px; margin: 0 auto 60px; font-size: 1.3rem;">
+      De agentes básicos a sistemas complexos multiagentes, aiBotize.com oferece soluções que se adaptam perfeitamente ao seu negócio, com exemplos inspirados em redes sociais líderes.
+    </p>
     <div class="gallery-grid">
-      <!-- Card 1 -->
       <div class="card-flip">
         <div class="card-inner">
           <div class="card-front">
             <img src="https://cdn.leonardo.ai/users/74a4f1de-3d35-49e3-94ae-7cbc43f352c5/generations/b0690fb0-2eab-4327-80a4-cfe9abc3f934/Default_vida_leitura_futuro_universo_tecnologia_0.jpg" alt="Agente Anna">
-            <div style="position: absolute; bottom: 0; background: rgba(0,0,0,0.7); width: 100%; padding: 10px;">
-              <h3 style="margin: 0; text-align: center; color: #10b981;">Agente Anna</h3>
+            <div style="position: absolute; bottom: 0; background: rgba(139, 0, 0, 0.7); width: 100%; padding: 15px;">
+              <h3 style="margin: 0; text-align: center; color: #ffd700;">Agente Anna: O Hub Inteligente</h3>
             </div>
           </div>
           <div class="card-back">
-            <i class="fas fa-robot" style="font-size: 3rem; color: #10b981; margin-bottom: 20px;"></i>
-            <h3>Agente Personalizado</h3>
-            <p>Hub de IA para WhatsApp: conecta ferramentas e responde com precisão natural.</p>
+            <i class="fas fa-brain" style="font-size: 4rem; color: #ff4500; margin-bottom: 25px;"></i>
+            <h3>Agente Personalizado Avançado</h3>
+            <p>Crie um hub de IA que conecta WhatsApp a todas as suas ferramentas, processando multimídia e aplicando regras complexas para automações impecáveis. Como em redes sociais, onde bots gerenciam comunidades, Anna lida com consultas, vendas e suporte com empatia humana.</p>
           </div>
         </div>
       </div>
-      <!-- Card 2 -->
       <div class="card-flip">
         <div class="card-inner">
           <div class="card-front">
             <img src="https://cdn.leonardo.ai/users/74a4f1de-3d35-49e3-94ae-7cbc43f352c5/generations/7cc45915-b618-4d49-bf32-2cc7df19ef0b/Default_vida_leitura_futuro_universo_0.jpg" alt="Automação Interna">
-            <div style="position: absolute; bottom: 0; background: rgba(0,0,0,0.7); width: 100%; padding: 10px;">
-              <h3 style="margin: 0; text-align: center; color: #a78bfa;">Automação Interna</h3>
+            <div style="position: absolute; bottom: 0; background: rgba(139, 0, 0, 0.7); width: 100%; padding: 15px;">
+              <h3 style="margin: 0; text-align: center; color: #ffd700;">Fluxos Automatizados Multiagente</h3>
             </div>
           </div>
           <div class="card-back">
-            <i class="fas fa-cogs" style="font-size: 3rem; color: #a78bfa; margin-bottom: 20px;"></i>
-            <h3>Fluxos Automatizados</h3>
-            <p>Kanban e multiagente para campanhas e prospecção eficientes.</p>
+            <i class="fas fa-network-wired" style="font-size: 4rem; color: #ff4500; margin-bottom: 25px;"></i>
+            <h3>Automação Interna Poderosa</h3>
+            <p>Use Kanban inteligente e multiagentes para campanhas, prospecção e gerenciamento de leads. Inspirado em ferramentas como Trello integradas a bots de LinkedIn, otimize workflows internos enquanto mantém todas as regras de negócio intactas.</p>
           </div>
         </div>
       </div>
-      <!-- Card 3 -->
       <div class="card-flip">
         <div class="card-inner">
           <div class="card-front">
             <img src="https://th.bing.com/th/id/OIG1.QAt29dw.kWqOAqpptYZK?pid=ImgGn" alt="Interações com Clientes">
-            <div style="position: absolute; bottom: 0; background: rgba(0,0,0,0.7); width: 100%; padding: 10px;">
-              <h3 style="margin: 0; text-align: center; color: #ec4899;">Interações Melhoradas</h3>
+            <div style="position: absolute; bottom: 0; background: rgba(139, 0, 0, 0.7); width: 100%; padding: 15px;">
+              <h3 style="margin: 0; text-align: center; color: #ffd700;">Engajamento Humanizado Global</h3>
             </div>
           </div>
           <div class="card-back">
-            <i class="fas fa-comments" style="font-size: 3rem; color: #ec4899; margin-bottom: 20px;"></i>
-            <h3>Engajamento Humanizado</h3>
-            <p>Respostas rápidas, personalizadas e multilíngues para clientes globais.</p>
+            <i class="fas fa-globe" style="font-size: 4rem; color: #ff4500; margin-bottom: 25px;"></i>
+            <h3>Interações que Conquistam</h3>
+            <p>Respostas rápidas, personalizadas e multilíngues, sensíveis a emoções e contextos. Como os chatbots do Facebook que impulsionam engajamento em páginas, transforme conversas em conversões, respeitando regras culturais e de compliance.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-flip">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="https://th.bing.com/th/id/OIG1.m4d73kx57VhGAVUBPJMi?pid=ImgGn" alt="Integração Avançada">
+            <div style="position: absolute; bottom: 0; background: rgba(139, 0, 0, 0.7); width: 100%; padding: 15px;">
+              <h3 style="margin: 0; text-align: center; color: #ffd700;">Integrações Seamless</h3>
+            </div>
+          </div>
+          <div class="card-back">
+            <i class="fas fa-plug" style="font-size: 4rem; color: #ff4500; margin-bottom: 25px;"></i>
+            <h3>Integrações que Empoderam</h3>
+            <p>Conecte com CRMs, e-commerces e redes sociais para automações completas. Exemplo: Integre com Instagram para sincronizar DMs com WhatsApp, aplicando regras de moderação e vendas automatizadas.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- Contato -->
-  <section id="contato" class="glass-card" style="border: 1px solid #10b981;">
-    <div style="text-align: center; margin-bottom: 40px;">
-      <h2 class="glow-text">Pronto para Automatizar Seu WhatsApp?</h2>
-      <p>Entre em contato para um design personalizado de agente de IA.</p>
+
+  <!-- Parallax 4: Universo de Possibilidades -->
+  <div class="parallax" style="background-image: url('https://cdn.leonardo.ai/users/74a4f1de-3d35-49e3-94ae-7cbc43f352c5/generations/7cc45915-b618-4d49-bf32-2cc7df19ef0b/Default_vida_leitura_futuro_universo_0.jpg'); height: 600px;"></div>
+
+  <!-- Seção Cases de Sucesso -->
+  <section id="cases" class="glass-card">
+    <h2 class="glow-text" style="text-align: center; font-size: 3rem;">Cases de Sucesso: Transformações Reais</h2>
+    <p style="text-align: center; max-width: 900px; margin: 0 auto 50px; font-size: 1.3rem;">
+      Veja como empresas como a sua revolucionaram suas operações com nossos agentes, inspirados em estratégias de redes sociais comprovadas.
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+      <div class="case-item" style="flex: 1; min-width: 400px; background: rgba(255, 99, 71, 0.15); padding: 40px; border-radius: 20px; box-shadow: 0 0 30px rgba(255, 69, 0, 0.4);">
+        <h3>Case: E-commerce de Moda</h3>
+        <p>
+          Uma loja online integrada com Instagram e WhatsApp usou nosso agente para automatizar consultas de estoque, recomendações personalizadas e processamentos de pedidos. Resultado: Aumento de 45% nas conversões, redução de 70% no tempo de resposta, tudo respeitando regras de estoque mínimo e promoções sazonais. Como no Facebook Shops, o agente enviava catálogos interativos, impulsionando vendas diretas.
+        </p>
+      </div>
+      <div class="case-item" style="flex: 1; min-width: 400px; background: rgba(255, 99, 71, 0.15); padding: 40px; border-radius: 20px; box-shadow: 0 0 30px rgba(255, 69, 0, 0.4);">
+        <h3>Case: Clínica Médica</h3>
+        <p>
+          Para uma rede de clínicas, criamos um agente que agenda consultas via WhatsApp, verifica disponibilidade em tempo real e envia lembretes, sempre conforme regras de privacidade HIPAA-like. Inspirado em bots de saúde no Twitter, reduziu no-shows em 60% e liberou recepcionistas para tarefas críticas, com integrações a sistemas de EHR.
+        </p>
+      </div>
+      <div class="case-item" style="flex: 1; min-width: 400px; background: rgba(255, 99, 71, 0.15); padding: 40px; border-radius: 20px; box-shadow: 0 0 30px rgba(255, 69, 0, 0.4);">
+        <h3>Case: Agência de Marketing</h3>
+        <p>
+          Uma agência usou multiagentes para gerenciar campanhas cross-plataforma, sincronizando WhatsApp com LinkedIn e Instagram. O agente qualificava leads, aplicava regras de segmentação e gerava relatórios – aumentando ROI em 35%. Como em ferramentas de automação social, transformou interações em oportunidades de negócio concretas.
+        </p>
+      </div>
     </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 40px;">
-      <div style="flex: 1; min-width: 300px;">
-        <h3 style="color: #10b981;">Inicie Agora</h3>
+  </section>
+
+  <!-- Seção Depoimentos -->
+  <section id="depoimentos" class="glass-card">
+    <h2 class="glow-text" style="text-align: center; font-size: 3rem;">O que Nossos Clientes Dizem</h2>
+    <p style="text-align: center; max-width: 900px; margin: 0 auto 50px; font-size: 1.3rem;">
+      Palavras de quem já experimentou o poder da aiBotize.com – e não volta atrás.
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+      <div class="testimonial-card" style="flex: 1; min-width: 300px;">
+        <p>"O agente desenvolvido por Gustavo e aiBotize transformou nosso WhatsApp em uma ferramenta de vendas imbatível. Respeita todas as nossas regras e encanta clientes!"</p>
+        <p><strong>João Silva, CEO de E-commerce</strong></p>
+      </div>
+      <div class="testimonial-card" style="flex: 1; min-width: 300px;">
+        <p>"Eficiência e conformidade em um pacote só. Recomendo para qualquer negócio que queira escalar sem perder o toque humano."</p>
+        <p><strong>Maria Oliveira, Gerente de Clínica</strong></p>
+      </div>
+      <div class="testimonial-card" style="flex: 1; min-width: 300px;">
+        <p>"Integrações perfeitas com redes sociais. Nossa agência nunca foi tão produtiva!"</p>
+        <p><strong>Pedro Santos, Diretor de Marketing</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção FAQ -->
+  <section id="faq" class="glass-card">
+    <h2 class="glow-text" style="text-align: center; font-size: 3rem;">Perguntas Frequentes</h2>
+    <p style="text-align: center; max-width: 900px; margin: 0 auto 50px; font-size: 1.3rem;">
+      Tire suas dúvidas e veja por que aiBotize.com é a escolha certa para seu agente de IA.
+    </p>
+    <div class="faq-item">
+      <div class="faq-question">Como o agente respeita minhas regras de negócio?</div>
+      <div class="faq-answer">
+        <p>Nossos agentes são construídos com camadas simbólicas que aplicam regras determinísticas, garantindo que cada ação – de descontos a aprovações – siga exatamente suas políticas. Personalizamos tudo durante o desenvolvimento.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Integra com redes sociais?</div>
+      <div class="faq-answer">
+        <p>Sim! Como exemplos clássicos, integramos com Instagram, Facebook e LinkedIn para sincronizar mensagens, leads e campanhas, criando um ecossistema unificado centrado no WhatsApp.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Quanto tempo leva para implementar?</div>
+      <div class="faq-answer">
+        <p>De 2 a 4 semanas, dependendo da complexidade. Incluímos treinamento e suporte contínuo para garantir sucesso imediato.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">É seguro?</div>
+      <div class="faq-answer">
+        <p>Absolutamente. Usamos criptografia end-to-end, conformidade com LGPD e auditorias regulares para proteger seus dados.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Por que contratar aiBotize.com?</div>
+      <div class="faq-answer">
+        <p>Porque entregamos agentes fodas que não só automatizam, mas elevam seu negócio. Com expertise de Gustavo Cohgus, você ganha inovação que gera resultados reais.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Contato -->
+  <section id="contato" class="glass-card" style="border: 2px solid #ff4500;">
+    <div style="text-align: center; margin-bottom: 50px;">
+      <h2 class="glow-text" style="font-size: 3.5rem;">Pronto para Ter Seu Agente de IA Foda?</h2>
+      <p style="font-size: 1.4rem;">Entre em contato agora e transforme seu WhatsApp em uma potência de automação. aiBotize.com está pronta para criar o agente perfeito para você.</p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 50px;">
+      <div style="flex: 1; min-width: 400px;">
+        <h3 style="color: #ffd700; font-size: 2rem;">Inicie Sua Jornada</h3>
         <form action="https://formspree.io/f/mzzpgjwq" method="POST">
           <input type="text" name="nome" placeholder="Seu Nome / Empresa" required>
           <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
-          <textarea name="mensagem" rows="5" placeholder="Descreva seu desafio de automação?" required></textarea>
-          <button type="submit" class="gradient-btn" style="width: 100%;">Agendar Consulta</button>
+          <input type="tel" name="telefone" placeholder="Seu Telefone (opcional)">
+          <textarea name="mensagem" rows="7" placeholder="Descreva seu desafio, regras de negócio e o que espera do agente..." required></textarea>
+          <button type="submit" class="gradient-btn" style="width: 100%;">Agendar Consulta Gratuita</button>
         </form>
       </div>
-      <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center;">
-        <div class="terminal" style="margin-top: 0;">
-          <p class="cmd-line">status_sistema: <span style="color: #10b981;">ONLINE</span></p>
-          <p class="cmd-line">disponibilidade: <span style="color: #facc15;">AGENDAMENTO ABERTO</span></p>
+      <div style="flex: 1; min-width: 400px; display: flex; flex-direction: column; justify-content: center;">
+        <div class="terminal" style="margin-top: 0; height: 100%;">
+          <p class="cmd-line">STATUS DO SISTEMA: <span style="color: #ff4500;">PRONTO PARA INOVAÇÃO</span></p>
+          <p class="cmd-line">DISPONIBILIDADE: <span style="color: #ffd700;">IMEDIATA</span></p>
           <br>
-          <p>> Otimize seu negócio com AI inteligente.</p>
-          <br>
-          <p>> Aguardando input...</p>
+          <p>> Imagine o impacto: Clientes encantados, vendas disparando, equipe focada no que importa.</p>
+          <p>> Com aiBotize.com, seu agente respeita cada regra e supera expectativas.</p>
+          <p>> O que está esperando? Input agora!</p>
         </div>
       </div>
     </div>
   </section>
+
   <footer>
-    <p style="opacity: 0.7;">&copy; 2025 Gustavo Cohgus & aiBotize. Todos os direitos reservados.</p>
-    <div style="margin-top: 20px;">
-      <a href="#" style="color: #fff; margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
-      <a href="#" style="color: #fff; margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-github"></i></a>
-      <a href="#" style="color: #fff; margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+    <p style="opacity: 0.8; font-size: 1.1rem;">&copy; 2025 Gustavo Cohgus & aiBotize.com. Todos os direitos reservados. Transformando negócios com IA de ponta.</p>
+    <div style="margin-top: 30px;">
+      <a href="https://www.linkedin.com/in/gustavocohgus" style="color: #ffdead; margin: 0 15px; font-size: 2rem;"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/cohgus" style="color: #ffdead; margin: 0 15px; font-size: 2rem;"><i class="fab fa-github"></i></a>
+      <a href="https://wa.me/+5541984404661" style="color: #ffdead; margin: 0 15px; font-size: 2rem;"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://aibotize.com" style="color: #ffdead; margin: 0 15px; font-size: 2rem;"><i class="fas fa-robot"></i></a>
     </div>
-    <p style="font-size: 0.8rem; color: #555; margin-top: 20px;">Desenvolvido para Automação Inteligente</p>
+    <p style="font-size: 0.9rem; color: #8b0000; margin-top: 30px;">Desenvolvido com Paixão por Automação Inteligente e Conformidade Impecável</p>
   </footer>
+
   <script>
-    // Existing script retained
+    // Observer para Animações
     const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
     }, observerOptions);
     document.querySelectorAll('section').forEach(section => observer.observe(section));
+
+    // Partículas Quentes
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    let particles = [];
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.speedY = Math.random() * 0.5 - 0.25;
+        this.color = `rgba(255, ${Math.random()*100 + 69}, 0, 0.5)`;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+        if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+      }
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    function init() {
+      for (let i = 0; i < 200; i++) {
+        particles.push(new Particle());
+      }
+    }
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+    init();
+    animate();
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // Accordion para FAQ
+    document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+        const answer = item.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
   </script>
 </body>
 </html>
