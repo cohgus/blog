@@ -1,0 +1,190 @@
+---
+import Base from '../layouts/Base.astro';
+
+const projetos = [
+  {
+    nome: 'aiBotize',
+    tipo: 'Plataforma SaaS',
+    descricao: 'Plataforma de atendimento automatizado via inteligencia artificial, com suporte a multiplos canais — WhatsApp, Telegram e web. Recebe mensagens de qualquer canal, processa com modelos de linguagem e responde de forma contextualizada.',
+    detalhes: '14 stacks Docker, 22 servicos orquestrados em Docker Swarm. Processamento de linguagem natural com GPT, transcricao de audio com Whisper, busca semantica com embeddings vetoriais via Pinecone. Fluxo completo desde o recebimento da mensagem ate a resposta automatizada, passando por filas RabbitMQ e workflows N8N.',
+    stack: 'Node.js, Docker Swarm, N8N, PostgreSQL, RabbitMQ, Redis, Traefik, OpenAI, Pinecone',
+    tags: ['IA', 'NLP', 'WhatsApp', 'Docker', 'Automacao'],
+    link: { url: 'https://aibotize.com', label: 'aibotize.com' },
+  },
+  {
+    nome: 'BCI Global',
+    tipo: 'Inteligencia operacional',
+    descricao: 'Pipeline de dados automatizado conectado ao ERP de uma gestora de restaurantes em Curitiba/PR. Dashboard executivo, DRE gerencial automatico e assistente IA com conhecimento do negocio.',
+    detalhes: 'Arquitetura medallion (bronze/silver/gold) com 25 rotinas agendadas que puxam vendas, caixa, estoque, compras e titulos do ERP a cada hora. Portal de gestao com semaforo de saude financeira por filial. O gerente abre o portal pela manha e ja sabe o que precisa de atencao — sem planilha, sem ligar para TI.',
+    tags: ['BI', 'Pipeline de dados', 'ERP', 'Dashboard', 'IA'],
+  },
+  {
+    nome: 'Fortal Aluminios',
+    tipo: 'Atendimento automatizado',
+    descricao: 'Agente de IA para atendimento ao cliente via WhatsApp de uma extrusora de perfis de aluminio em Apucarana/PR. Conhecimento completo dos produtos e processos da empresa.',
+    detalhes: 'Integracao com sistema de atendimento multicanal, roteamento inteligente para vendedores quando necessario, transcricao de audios e gestao automatizada de conversas.',
+    tags: ['WhatsApp', 'IA', 'Atendimento', 'Integracao'],
+  },
+];
+---
+
+<Base title="Projetos" description="Projetos selecionados — Gustavo Cohgus" current="projetos">
+
+  <!-- Header -->
+  <section style="
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 5rem 1.5rem 1.5rem;
+  ">
+    <h1 class="text-gradient reveal stagger-1">Projetos</h1>
+
+    <p class="reveal stagger-2" style="
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+    ">
+      Trabalhos selecionados.
+    </p>
+  </section>
+
+  <!-- Divider -->
+  <div class="divider" style="
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+  "></div>
+
+  <!-- Cards de projeto -->
+  <section style="
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 2rem;
+  ">
+    <div style="
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    ">
+      {projetos.map((projeto, i) => (
+        <article class={`card-hover reveal stagger-${i + 1}`} style="
+          background: var(--bg-card);
+          border: 1px solid var(--border);
+          border-radius: 0.75rem;
+          padding: 2rem;
+        ">
+          <!-- Header do card -->
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+          ">
+            <h2 style="
+              font-family: var(--font-display);
+              font-size: 1.2rem;
+              color: var(--text-primary);
+              margin: 0;
+              line-height: 1.3;
+            ">{projeto.nome}</h2>
+
+            <span style="
+              font-family: var(--font-mono);
+              font-size: 0.7rem;
+              color: var(--text-muted);
+              letter-spacing: 0.03em;
+            ">{projeto.tipo}</span>
+          </div>
+
+          <!-- Descricao -->
+          <p style="
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin: 0 0 0.75rem 0;
+          ">{projeto.descricao}</p>
+
+          <!-- Detalhes tecnicos -->
+          <p style="
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin: 0 0 1.25rem 0;
+          ">{projeto.detalhes}</p>
+
+          <!-- Stack (somente aiBotize) -->
+          {projeto.stack && (
+            <p style="
+              font-family: var(--font-mono);
+              font-size: 0.7rem;
+              color: var(--text-muted);
+              line-height: 1.6;
+              margin: 0 0 1.25rem 0;
+              opacity: 0.8;
+            ">{projeto.stack}</p>
+          )}
+
+          <!-- Tags + Link -->
+          <div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+          ">
+            <div style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.4rem;
+            ">
+              {projeto.tags.map(tag => (
+                <span class="badge">{tag}</span>
+              ))}
+            </div>
+
+            {projeto.link && (
+              <a
+                href={projeto.link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-underline"
+                style="
+                  font-family: var(--font-mono);
+                  font-size: 0.75rem;
+                  color: var(--accent);
+                  text-decoration: none;
+                  white-space: nowrap;
+                "
+              >
+                {projeto.link.label} &#8599;
+              </a>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- Nota final -->
+  <section style="
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 1rem 1.5rem 4rem;
+    text-align: center;
+  ">
+    <p class="reveal" style="
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 50ch;
+      margin: 0 auto;
+    ">
+      Outros trabalhos incluem consultoria em automacao e desenvolvimento de workflows para pequenas empresas.
+    </p>
+  </section>
+
+</Base>

@@ -1,0 +1,42 @@
+---
+const year = new Date().getFullYear();
+const links = [
+  { href: 'https://www.linkedin.com/in/gustavocohgus', label: 'LinkedIn' },
+  { href: 'https://www.instagram.com/cohgus', label: 'Instagram' },
+  { href: 'https://github.com/cohgus', label: 'GitHub' },
+  { href: 'https://www.upwork.com/freelancers/~013380c0067760baf3', label: 'Upwork' },
+];
+---
+
+<footer style="
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 1.5rem;
+  margin-top: 5rem;
+">
+  <div style="max-width: var(--content-max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">
+      &copy; {year} Gustavo Cohgus
+    </div>
+
+    <div style="display: flex; gap: 1.5rem;">
+      {links.map(link => (
+        <a
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          style="
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+          "
+          onmouseover="this.style.color='var(--accent)'"
+          onmouseout="this.style.color='var(--text-muted)'"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</footer>

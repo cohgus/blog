@@ -1,0 +1,325 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Sobre" current="sobre">
+
+  <!-- Header -->
+  <section style="
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 5rem 1.5rem 2rem;
+  ">
+    <h1 class="text-gradient reveal stagger-1">Sobre</h1>
+    <p class="reveal stagger-2" style="
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+    ">Trajetoria, formacao e interesses.</p>
+  </section>
+
+  <!-- Bio -->
+  <section class="reveal stagger-3" style="
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+  ">
+    <div style="
+      max-width: 65ch;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    ">
+      <p style="
+        font-family: var(--font-sans);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        line-height: 1.75;
+      ">
+        Escritor, desenvolvedor e fundador da aiBotize. Atualmente cursando Analise e Desenvolvimento de Sistemas, com formacao tecnica em Eletromecanica e passagens por Engenharia, Musicoterapia e Psicanalise.
+      </p>
+
+      <p style="
+        font-family: var(--font-sans);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        line-height: 1.75;
+      ">
+        Desde a adolescencia envolvido com a Pastoral da Juventude e o movimento estudantil da Uniao Nacional dos Estudantes. Viajou do Sul ao Nordeste do Brasil, buscando vivenciar comunidades e diferentes perspectivas.
+      </p>
+
+      <p style="
+        font-family: var(--font-sans);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        line-height: 1.75;
+      ">
+        Atuou na politica parlamentar em seu municipio e estado. Hoje se dedica ao desenvolvimento de plataformas de inteligencia artificial aplicadas ao atendimento ao cliente e a gestao operacional de empresas.
+      </p>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="divider" style="
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+  "></div>
+
+  <!-- Competencias tecnicas -->
+  <section style="
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  ">
+    <h2 class="reveal" style="
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    ">Competencias tecnicas</h2>
+
+    <div class="reveal stagger-1" style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+      gap: 2rem;
+      max-width: 40rem;
+    ">
+      <!-- Coluna 1: Desenvolvimento -->
+      <div>
+        <h3 style="
+          font-family: var(--font-display);
+          font-size: 0.9rem;
+          color: var(--text-primary);
+          margin-bottom: 1rem;
+        ">Desenvolvimento</h3>
+        <ul style="
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        ">
+          <li style="
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+          ">Node.js, TypeScript, Python</li>
+          <li style="
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+          ">Astro, Tailwind CSS</li>
+          <li style="
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+          ">Docker, Linux, Git</li>
+        </ul>
+      </div>
+
+      <!-- Coluna 2: IA & Dados -->
+      <div>
+        <h3 style="
+          font-family: var(--font-display);
+          font-size: 0.9rem;
+          color: var(--text-primary);
+          margin-bottom: 1rem;
+        ">IA &amp; Dados</h3>
+        <ul style="
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        ">
+          <li style="
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+          ">OpenAI (GPT, Whisper, Embeddings)</li>
+          <li style="
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+          ">Pinecone, RAG</li>
+          <li style="
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+          ">N8N, RabbitMQ, PostgreSQL</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="divider" style="
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+  "></div>
+
+  <!-- Cronologia -->
+  <section style="
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  ">
+    <h2 class="reveal" style="
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    ">Cronologia</h2>
+
+    <div class="reveal stagger-1" style="
+      position: relative;
+      padding-left: 2rem;
+      max-width: 40rem;
+    ">
+      <!-- Linha vertical -->
+      <div style="
+        position: absolute;
+        left: 5px;
+        top: 4px;
+        bottom: 4px;
+        width: 2px;
+        background: var(--border);
+      "></div>
+
+      <!-- 2026 -->
+      <div style="position: relative; padding-bottom: 1.75rem;">
+        <span style="
+          position: absolute;
+          left: -2rem;
+          top: 4px;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: var(--accent);
+          border: 2px solid var(--bg-primary);
+        "></span>
+        <div style="display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;">
+          <span style="
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent);
+            min-width: 3.5rem;
+          ">2026</span>
+          <span style="
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+          ">Fundacao da aiBotize</span>
+        </div>
+      </div>
+
+      <!-- 2024 -->
+      <div style="position: relative; padding-bottom: 1.75rem;">
+        <span style="
+          position: absolute;
+          left: -2rem;
+          top: 4px;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: var(--accent);
+          border: 2px solid var(--bg-primary);
+        "></span>
+        <div style="display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;">
+          <span style="
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent);
+            min-width: 3.5rem;
+          ">2024</span>
+          <span style="
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+          ">Publicacao do livro &ldquo;Jornada&rdquo;</span>
+        </div>
+      </div>
+
+      <!-- 2020s -->
+      <div style="position: relative; padding-bottom: 1.75rem;">
+        <span style="
+          position: absolute;
+          left: -2rem;
+          top: 4px;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: var(--accent);
+          border: 2px solid var(--bg-primary);
+        "></span>
+        <div style="display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;">
+          <span style="
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent);
+            min-width: 3.5rem;
+          ">2020s</span>
+          <span style="
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+          ">Estudos em Engenharia, Musicoterapia, Psicanalise</span>
+        </div>
+      </div>
+
+      <!-- 2010s -->
+      <div style="position: relative; padding-bottom: 1.75rem;">
+        <span style="
+          position: absolute;
+          left: -2rem;
+          top: 4px;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: var(--accent);
+          border: 2px solid var(--bg-primary);
+        "></span>
+        <div style="display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;">
+          <span style="
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent);
+            min-width: 3.5rem;
+          ">2010s</span>
+          <span style="
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+          ">Pastoral da Juventude, UNE, politica parlamentar</span>
+        </div>
+      </div>
+
+      <!-- Formacao -->
+      <div style="position: relative;">
+        <span style="
+          position: absolute;
+          left: -2rem;
+          top: 4px;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: var(--accent);
+          border: 2px solid var(--bg-primary);
+        "></span>
+        <div style="display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;">
+          <span style="
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent);
+            min-width: 3.5rem;
+          ">Formacao</span>
+          <span style="
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+          ">Tecnico em Eletromecanica</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>
